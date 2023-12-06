@@ -9,15 +9,23 @@ class PostController extends Controller
 {
     public function index(Review $review)
     {
-<<<<<<< HEAD
-        return view('posts/index')->with(['reviews' => $review->getPaginateByLimit()]);
-=======
         return view('posts.index')->with(['reviews' => $review->getPaginateByLimit()]);
->>>>>>> origin/master
     }
     
     public function show(Review $review)
     {
         return view('posts/show')->with(['review' => $review]);
+    }
+    
+    public function create()
+    {
+        return view('posts/create');
+    }
+    
+    public function store(Request $request, Review $review)
+    {
+        $input = $request['review'];
+        $review-> fill($input)->save();
+        return redirect('/reviews/' .$review->id);
     }
 }
