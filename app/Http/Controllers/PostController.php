@@ -9,7 +9,11 @@ class PostController extends Controller
 {
     public function index(Review $review)
     {
+<<<<<<< HEAD
+        return view('posts/index')->with(['reviews' => $review->getPaginateByLimit()]);
+=======
         return view('posts.index')->with(['reviews' => $review->getPaginateByLimit()]);
+>>>>>>> origin/master
     }
     
     public function show(Review $review)
