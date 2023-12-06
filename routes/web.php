@@ -17,3 +17,4 @@ use App\Http\Controllers\PostController;
 
 Route::get('/reviews', [PostController::class, 'index']);
 Route::get('/', [PostController::class, 'index']);
+Route::get('/reviews/{review}', [PostController::class, 'show']);
