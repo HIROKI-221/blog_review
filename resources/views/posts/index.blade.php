@@ -12,8 +12,8 @@
     </head>
     <body class="antialiased">
         <h1>Blog Name</h1>
+        <a href="/reviews/create">create</a>
         <div class='posts'>
-            <a href='/reviews/create'>create</a>
             @foreach ($reviews as $review)
                 <div class='post'>
                     <h2 class='title'><a href="/reviews/{{ $review->id }}">{{ $review->title }}</a></h2>
