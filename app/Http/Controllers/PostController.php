@@ -9,6 +9,6 @@ class PostController extends Controller
 {
     public function index(Review $review)
     {
-        return $review->get();
+        return view('posts.index')->with(['reviews' => $review->getPaginateByLimit()]);
     }
 }
