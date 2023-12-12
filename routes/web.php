@@ -19,5 +19,7 @@ use App\Http\Controllers\PostController;
 Route::get('/', [PostController::class, 'index']);
 Route::get('/reviews/create', [PostController::class, 'create']);
 Route::get('/reviews/{review}', [PostController::class, 'show']); 
+Route::get('/reviews/{review}/edit', [PostController::class, 'edit']);
+Route::put('/reviews/{review}', [PostController::class, 'update']);
 Route::post('/reviews', [PostController::class, 'store']);
 
