@@ -21,5 +21,6 @@ Route::get('/reviews/create', [PostController::class, 'create']);
 Route::get('/reviews/{review}', [PostController::class, 'show']); 
 Route::get('/reviews/{review}/edit', [PostController::class, 'edit']);
 Route::put('/reviews/{review}', [PostController::class, 'update']);
+Route::delete('/reviews/{review}', [PostController::class,'delete']);
 Route::post('/reviews', [PostController::class, 'store']);
 

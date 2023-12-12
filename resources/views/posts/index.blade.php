@@ -18,11 +18,25 @@
                 <div class='post'>
                     <h2 class='title'><a href="/reviews/{{ $review->id }}">{{ $review->title }}</a></h2>
                     <p class='body'>{{ $review->body }}</p>
+                    <form action="/reviews/{{ $review->id }}" id="form_{{ $review->id }}" method="post">
+                        @csrf
+                        @method('DELETE')
+                        <button type="button" onclick="deletePost({{ $review->id }})">delete</button> 
+                        </form>
                 </div>
             @endforeach
         </div>
         <div class='paginate'>
             {{ $reviews->links() }}
         </div>
+        <script>
+        function deletePost(id) {
+            'use strict'
+            if (confirm('削除すると復元できません。\n本当に削除しますか？')) {
+                document.getElementById(`form_${id}`).submit();
+                
+            }
+        }
+        </script>
     </body>
 </html>
