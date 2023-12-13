@@ -17,10 +17,12 @@ class ReviewSeeder extends Seeder
     public function run()
     {
         DB::table('reviews')->insert([
-            'table' => '命名の心得', 
+            'title' => '命名の心得', 
             'body' => '命名はデータを基準に考える', 
             'created_at' => new DateTime(), 
             'updated_at' => new DateTime(), 
+            'deleted_at' => new DateTime(),
+            'image' => '画像',
             ]);
     }
 }
